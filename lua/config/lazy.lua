@@ -49,3 +49,10 @@ require("lazy").setup({
     },
   },
 })
+
+-- Associate .gohtml files with HTML for TreeSitter.
+vim.filetype.add({
+  extension = {
+    gohtml = "html",
+  },
+})
