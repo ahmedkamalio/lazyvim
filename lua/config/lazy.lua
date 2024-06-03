@@ -44,9 +44,6 @@ require("lazy").setup({
       -- disable some rtp plugins
       disabled_plugins = {
         "gzip",
-        -- "matchit",
-        -- "matchparen",
-        -- "netrwPlugin",
         "tarPlugin",
         "tohtml",
         "tutor",
@@ -55,6 +52,16 @@ require("lazy").setup({
     },
   },
 })
+
+local templ_flag = vim.fn.stdpath("data") .. "/.templ_installed"
+local function install_templ_once()
+  if vim.fn.filereadable(templ_flag) == 0 then
+    vim.cmd("TSInstall templ")
+    vim.fn.writefile({}, templ_flag)
+  end
+end
+
+install_templ_once()
 
 vim.filetype.add({
   extension = {
