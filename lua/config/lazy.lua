@@ -66,6 +66,7 @@ install_templ_once()
 vim.filetype.add({
   extension = {
     gohtml = "html",
+    tmpl = "html",
     templ = "templ",
   },
 })
