@@ -1,0 +1,22 @@
+return {
+	"mason-org/mason-lspconfig.nvim",
+	opts = {
+		ensure_installed = {
+			"lua_ls",
+			"gopls",
+			"ts_ls",
+			"clangd",
+			"html",
+			"jsonls",
+			"bashls",
+			"cmake",
+			"tailwindcss",
+			"eslint",
+			"pylsp",
+		},
+	},
+	dependencies = {
+		{ "mason-org/mason.nvim", opts = {} },
+		"neovim/nvim-lspconfig",
+	},
+}
