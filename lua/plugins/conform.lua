@@ -40,7 +40,7 @@ return {
             },
             sqlfluff = {
                 command = "sqlfluff",
-                args = { "format", "--dialect=postgres", "-" },
+                -- args = { "format", "--dialect=postgres", "-" }, // use project level .sqlfluff
                 stdin = true,
                 cwd = function()
                     return vim.fn.getcwd()
