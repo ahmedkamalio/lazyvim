@@ -7,6 +7,19 @@ return {
 		local cmp_nvim_lsp = require('cmp_nvim_lsp')
 		local capabilities = cmp_nvim_lsp.default_capabilities()
 
+		-- Configure diagnostics to show inline
+		vim.diagnostic.config({
+			virtual_text = {
+				enabled = true,
+				source = "always",
+				prefix = "●",
+			},
+			signs = true,
+			underline = true,
+			update_in_insert = false,
+			severity_sort = true,
+		})
+
 		local on_attach = function(client, bufnr)
 			local opts = { buffer = bufnr }
 			vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
