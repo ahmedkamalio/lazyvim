@@ -26,6 +26,7 @@ return {
             go = { "gofmt" },
             sql = { "sqlfluff" },
             pgsql = { "sqlfluff" },
+            yaml = { "yamlfix" },
         },
         -- Set default options
         default_format_opts = {
@@ -41,6 +42,13 @@ return {
             sqlfluff = {
                 command = "sqlfluff",
                 -- args = { "format", "--dialect=postgres", "-" }, // use project level .sqlfluff
+                stdin = true,
+                cwd = function()
+                    return vim.fn.getcwd()
+                end,
+            },
+            yamlfix = {
+                command = "yamlfix",
                 stdin = true,
                 cwd = function()
                     return vim.fn.getcwd()

@@ -14,6 +14,7 @@ return {
             "eslint",
             "pylsp",
             "sqls",
+            "yamlls",
         },
     },
     dependencies = {
